@@ -1,4 +1,6 @@
+# Nebula
 
+Erlang nodes discovery agent
 
 ## References
 

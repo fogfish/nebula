@@ -1,0 +1,23 @@
+_build/
+log/
+rebar3
+*.sublime-*
+*.dump
+*.beam
+
+##
+## release artifacts
+*.tar.gz
+*.bundle
+
+##
+## created dynamically by rebar3/relx
+## it shall be ignored otherwise release is dirty
+relx.config
+
+##
+## used by ux
+*.map
+node_modules/
+.DS_Store
+

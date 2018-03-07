@@ -1,0 +1,16 @@
+{application, whale,
+   [
+      {description, "connectivity with docker daemon"},
+      {vsn,         "0.0.0"},
+      {modules,     []},
+      {registered,  []},
+      {applications,[
+         kernel
+        ,stdlib
+        ,lager
+        ,knet
+      ]},
+      {mod, {whale_app, []}},
+      {env, []}
+   ]
+}.

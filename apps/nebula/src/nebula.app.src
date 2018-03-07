@@ -1,0 +1,17 @@
+{application, nebula,
+   [
+      {description, "erlang peers discovery"},
+      {vsn,         "0.0.0"},
+      {modules,     []},
+      {registered,  []},
+      {applications,[
+         kernel
+        ,stdlib
+        ,pns
+        ,whale
+        ,restd
+      ]},
+      {mod, {nebula_app, []}},
+      {env, []}
+   ]
+}.

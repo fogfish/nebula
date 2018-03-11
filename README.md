@@ -2,6 +2,12 @@
 
 The solution implements Erlang nodes discovery for microservices deployable to Amazon ECS, Kubernetes or other Docker-based environments.
 
+## Inspiration
+
+Erlang cluster is build from loosely connected nodes. Erlang/OTP implements Erlang Port Mapper Daemon (**epmd**) that coordinates connectivity between nodes. It is responsible for mapping and discovery the symbolic node names to node address (**IP**, **TCP ports**). However, this solution do not work out of the box in scalable manner in the container-based environment. The discovery needs to account Docker's network topology, dynamic port allocation, etc.
+
+
+
 
 ## Getting Started
 

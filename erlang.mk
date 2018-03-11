@@ -27,7 +27,7 @@ REL     = ${APP}-${VSN}
 PKG     = ${REL}+${ARCH}.${PLAT}
 TEST   ?= tests
 COOKIE ?= nocookie
-DOCKER ?= fogfish/erlang
+DOCKER ?= fogfish/erlang-alpine:20.2
 IID     = ${URI}${ORG}/${APP}
 
 ## required tools
@@ -139,6 +139,7 @@ run:
 	@erl ${EFLAGS}
 
 console: ${PKG}.tar.gz
+	@yum install -y socat
 	@_build/default/rel/${APP}/bin/${APP} foreground
 
 mock-up: test/mock/docker-compose.yml

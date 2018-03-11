@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  local:
+    build:
+      context: .
+      dockerfile: _build/spawner
+
+    ports:
+      - 4370:4370
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+

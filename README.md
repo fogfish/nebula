@@ -1,6 +1,29 @@
 # Nebula
 
-Erlang nodes discovery agent
+The solution implements Erlang nodes discovery for microservices deployable to Amazon ECS, Kubernetes or other Docker-based environments.
+
+
+## Getting Started
+
+The easiest way to run a discovery daemon is with the Docker container. It downloads and runs the latest build of daemon
+
+```
+docker run -it \
+   --name nebula --rm \
+   -p 4370:4370 \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   fogfish/nebula
+``` 
+
+Alternatively, you can built it from sources.   
+
+```
+make dist-up
+``` 
+
+
+This bring Nebula up and listening on port **4370**. 
+
 
 ## References
 

@@ -1,5 +1,6 @@
 ##
-## Name of the node
+## The configuration disables distribution except localhost. 
+## The distribution is not required by Nebula use-cases 
 -name nebula@127.0.0.1
 
 ##
@@ -26,4 +27,3 @@
 ## limit number of port, firewall requires empd 4369 port
 -kernel inet_dist_listen_min 32100
 -kernel inet_dist_listen_max 32199
-

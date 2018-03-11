@@ -1,0 +1,29 @@
+##
+## Name of the node
+-name nebula@127.0.0.1
+
+##
+## Cookie for distributed erlang
+-setcookie nocookie
+
+##
+## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
+## (Disabled by default..use with caution!)
+## -heart
+
+##
+## Enable kernel poll and a few async threads
++K true
++A 160
+
+##
+## vm config for high throughput
+-sbt true
+-sws very_eager
+-swt high
+
+##
+## limit number of port, firewall requires empd 4369 port
+-kernel inet_dist_listen_min 32100
+-kernel inet_dist_listen_max 32199
+

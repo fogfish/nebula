@@ -20,11 +20,7 @@
   0},
  {<<"lager">>,{pkg,<<"lager">>,<<"3.6.1">>},0},
  {<<"meck">>,{pkg,<<"meck">>,<<"0.8.9">>},1},
- {<<"pipe">>,
-  {git,"https://github.com/kfsm/pipe",
-       {ref,"0e65b48bdedd1735f5cec07dc58e3f695a788bc3"}},
-  0},
- {<<"pipes">>,{pkg,<<"pipes">>,<<"1.7.0">>},0},
+ {<<"pipe">>,{pkg,<<"pipes">>,<<"1.7.0">>},0},
  {<<"pns">>,
   {git,"https://github.com/fogfish/pns",
        {ref,"92bfcf925064227dad32568ec84172e9321ca761"}},
@@ -40,5 +36,5 @@
  {<<"jsx">>, <<"D2F6E5F069C00266CAD52FB15D87C428579EA4D7D73A33669E12679E203329DD">>},
  {<<"lager">>, <<"9D29C5FF7F926D25ECD9899990867C9152DCF34EEE65BAC8EC0DFC0D16A26E0C">>},
  {<<"meck">>, <<"64C5C0BD8BCCA3A180B44196265C8ED7594E16BCC845D0698EC6B4E577F48188">>},
- {<<"pipes">>, <<"30648602EEBA882C566277593BC72EC503854A103A52880AB5C4C5039DFA27C3">>}]}
+ {<<"pipe">>, <<"30648602EEBA882C566277593BC72EC503854A103A52880AB5C4C5039DFA27C3">>}]}
 ].

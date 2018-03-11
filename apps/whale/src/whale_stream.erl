@@ -50,11 +50,11 @@ free(_, #state{sock = Sock}) ->
 %%-----------------------------------------------------------------------------
 
 listen({http, _, {200, _, Head}}, _, #state{} = State) ->
-   lager:info("[whale] connected ~s", [jsx:encode(Head)]),
+   lager:info("[whale] connected ~p", [Head]),
    {next_state, listen, State};
 
 listen({http, _, {Err, _, Head}}, _, #state{} = State) ->
-   lager:error("[whale] connection error ~s", [jsx:encode(Head)]),
+   lager:error("[whale] connection error ~p", [Head]),
    {stop, {http, Err}, State};
 
 listen({http, _, eof}, _, #state{} = State) ->

@@ -23,6 +23,7 @@ init([]) ->
       {
          {one_for_one, 4, 1800},
          [
+            ?CHILD(worker, whale_sock_proxy)
          ]
       }
    }.

@@ -1,0 +1,20 @@
+%%
+%% include vm and extended bootstrap to release
+{include_erts,          false}.
+{extended_start_script, true}.
+
+%%
+%% release development mode
+{dev_mode,             false}.
+
+%%
+%% release configuration
+{vm_args,      "rel/vm.args"}.
+{sys_config,   "rel/sys.config"}.
+
+
+%%
+%% release content definition
+{release, [
+   nebula
+]}.

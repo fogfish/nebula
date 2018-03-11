@@ -4,7 +4,16 @@ The solution implements Erlang nodes discovery for microservices deployable to A
 
 ## Inspiration
 
-Erlang cluster is build from loosely connected nodes. Erlang/OTP implements Erlang Port Mapper Daemon (**epmd**) that coordinates connectivity between nodes. It is responsible for mapping and discovery the symbolic node names to node address (**IP**, **TCP ports**). However, this solution do not work out of the box in scalable manner in the container-based environment. The discovery needs to account Docker's network topology, dynamic port allocation, etc.
+Erlang cluster is build from loosely connected nodes that uses **tcp/ip** transport. Each node listens on different ports, which are allocated from pool. It requires a naming service that coordinates ports discovery. Erlang/OTP implements Erlang Port Mapper Daemon (**epmd**) for this purposes. It is responsible for mapping and discovery the symbolic node names to node address (**ip**, **tcp ports**). However, this solution do not work out of the box in scalable manner in the container-based environment. The discovery needs to account Docker's network topology, dynamic port allocation, etc.
+
+This project implements a container appliance to solve Erlang node discovery.
+
+
+## Key features 
+
+* [Distribution protocol](doc/protocol.md) to support node discovery in decentralized manner.
+* Listener of docker containers status.
+* HTTP-based discovery and port mapping.
 
 
 

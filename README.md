@@ -40,6 +40,20 @@ make dist-up
 This bring Nebula up and listening on port **4370**. 
 
 
+### Running at AWS ECS
+
+```
+ecs-cli compose -c ${CLUSTER} -p nebula -f aws-compose.yml service up
+```
+
+
+Scale Up the number of containers in the cluster so that each node runs one container 
+
+```
+ecs-cli compose -c ${CLUSTER} -p nebula -f aws-compose.yml service scale 10
+```
+
+
 ## References
 
 * https://www.erlang-solutions.com/blog/erlang-and-elixir-distribution-without-epmd.html

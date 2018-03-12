@@ -1,0 +1,25 @@
+## @doc
+##
+version: '2'
+
+services:
+  nebula:
+    image: fogfish/nebula
+    mem_reservation: 54m
+
+    ports:
+      - 4370:4370
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+    environment:
+      ## required to reduce Erlang VM memory footprint
+      - "CODE_LOADING_MODE=interactive"
+
+    

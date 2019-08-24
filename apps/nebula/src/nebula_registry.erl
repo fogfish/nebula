@@ -49,7 +49,7 @@ port(Node) ->
    lens:c(
       lens:at(<<"NetworkSettings">>),
       lens:at(<<"Ports">>),
-      lens:at(<<"32100/tcp">>),
+      lens:at(<<"32100/tcp">>, []),
       lens:hd(),
       lens:at(<<"HostPort">>)
    ).
@@ -57,10 +57,12 @@ port(Node) ->
 identity() ->
    lens:c(
       lens:at(<<"Config">>),
+      %% lens:at(<<"Hostname">>) use port 32100 as an indicator or Erlang-In-Docker
+
       lens:at(<<"Env">>),
-      lens:takewith(fun(<<"ERL_NODE=", _/binary>>) -> true; (_) -> false end),
+      lens:takewith(fun(<<"NODE=", _/binary>>) -> true; (_) -> false end),
       %% @todo: replace with binary lens
-      fun(Fun, <<"ERL_NODE=", Node/binary>>) ->
+      fun(Fun, <<"NODE=", Node/binary>>) ->
          lens:fmap(fun(_) -> Node end, Fun(Node))
       end
    ).
